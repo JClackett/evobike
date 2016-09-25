@@ -28,6 +28,7 @@ var Motors = React.createClass({
 		this.setState({
 			selectedMotor: motor
 		})
+		this.props.handleMotorSelect(motor);
  	},
 
 	showNewMotorForm() {

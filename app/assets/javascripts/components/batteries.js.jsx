@@ -24,6 +24,7 @@ var Batteries = React.createClass({
 		this.setState({
 			selectedBattery: battery
 		})
+		this.props.handleBatterySelect(battery);
  	},
 
 	showNewBatteryForm() {

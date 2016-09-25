@@ -1,13 +1,3 @@
-<h1>Motor:</h1>
-
-<%= react_component('Motors', motors: @motors) %>
-
-<h1>Batteries:</h1>
-
-<%= react_component('Batteries', batteries: @batteries) %>
-
-<h1>Bikes:</h1>
-
-<%= react_component('Bikes', bikes: @bikes) %>
+<%= react_component('App', motors: @motors, batteries: @batteries, bikes: @bikes) %>
 
 <%= image_tag 'http://www.mbike.com/news/wp-content/uploads/2015/09/BMW-R100RT-Scrambler-by-Los-Muertos-Motorcycles-1.jpg', style: "width: 100%; position: absolute; top: 0; left: 0; z-index: -1"%>

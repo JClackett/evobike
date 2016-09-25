@@ -23,6 +23,7 @@ var Bikes = React.createClass({
 		this.setState({
 			selectedBike: bike
 		})
+		this.props.handleBikeSelect(bike);
  	},
 
 	showNewBikeForm() {
