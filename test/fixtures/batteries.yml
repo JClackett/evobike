@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  voltage: 1.5
+  mass: 1.5
+  life_cycles: 1.5
+  amp_hours: 1.5
+
+two:
+  name: MyString
+  voltage: 1.5
+  mass: 1.5
+  life_cycles: 1.5
+  amp_hours: 1.5

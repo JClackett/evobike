@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dry_mass: 1.5
+  radius_wheel: 1.5
+  gear_ratio: 1.5
+
+two:
+  name: MyString
+  dry_mass: 1.5
+  radius_wheel: 1.5
+  gear_ratio: 1.5

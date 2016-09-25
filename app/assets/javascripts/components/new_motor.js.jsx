@@ -4,6 +4,7 @@ var NewMotorForm = React.createClass({
 	getInitialState() {
 		return {
 			motor: {
+				id: '',
 				name: '',
 				mass: '',
 				efficiency: '',
@@ -18,57 +19,9 @@ var NewMotorForm = React.createClass({
 		}
 	},
 
-	handleNameChange(e) {
+	handleChange(input) {
 	    var newMotor = this.state.motor;
-	    newMotor.name = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-	handleMassChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.mass = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-  	handleEfficiencyChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.efficiency = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-	handlePeakPowerChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.peak_power = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-  	handleMaxTorqueChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.max_continuous_torque = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-  	handleMaxSpeedChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.max_continuous_speed = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-  	handleLinkChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.link = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-	handleCostChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.cost = e.target.value;
-	    this.props.handleNewMotor({motor: newMotor});
-  	},
-
-  	handleNotesChange(e) {
-	    var newMotor = this.state.motor;
-	    newMotor.notes = e.target.value;
+	    newMotor[input.target.id] = input.target.value;
 	    this.props.handleNewMotor({motor: newMotor});
   	},
 
@@ -76,31 +29,31 @@ var NewMotorForm = React.createClass({
 		return (
 			<div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Name" onChange={this.handleNameChange}/>
+				  <input type="text" className="form-control" placeholder="Name" id="name" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Mass" onChange={this.handleMassChange}/>
+				  <input type="text" className="form-control" placeholder="Mass" id="mass" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Efficiency" onChange={this.handleEfficiencyChange}/>
+				  <input type="text" className="form-control" placeholder="Efficiency" id="efficiency" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Peak Power" onChange={this.handlePeakPowerChange}/>
+				  <input type="text" className="form-control" placeholder="Peak Power" id="peak_power" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Max Torque" onChange={this.handleMaxTorqueChange}/>
+				  <input type="text" className="form-control" placeholder="Max Torque" id="max_continuous_torque" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Max Speed RPM" onChange={this.handleMaxSpeedChange}/>
+				  <input type="text" className="form-control" placeholder="Max Speed RPM" id="max_continuous_speed" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Link" onChange={this.handleLinkChange}/>
+				  <input type="text" className="form-control" placeholder="Link" id="link" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Cost" onChange={this.handleCostChange}/>
+				  <input type="text" className="form-control" placeholder="Cost" id="cost" onChange={this.handleChange}/>
 				</div>
 				<div className="input-group">
-				  <input type="text" className="form-control" placeholder="Notes" onChange={this.handleNotesChange}/>
+				  <input type="text" className="form-control" placeholder="Notes" id="notes" onChange={this.handleChange}/>
 				</div>				
 			</div>
 		);

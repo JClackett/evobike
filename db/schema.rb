@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160924150704) do
+ActiveRecord::Schema.define(version: 20160925134432) do
+
+  create_table "batteries", force: :cascade do |t|
+    t.string   "name"
+    t.float    "voltage"
+    t.float    "mass"
+    t.float    "life_cycles"
+    t.float    "amp_hours"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "bikes", force: :cascade do |t|
+    t.string   "name"
+    t.float    "dry_mass"
+    t.float    "radius_wheel"
+    t.float    "gear_ratio"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "motors", force: :cascade do |t|
     t.text     "name"
