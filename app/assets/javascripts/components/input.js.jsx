@@ -9,7 +9,7 @@ var Input = React.createClass({
 		var key = input.target.id
 		var obj = {};
 		obj[key] = input.target.value;
-	    this.props.handleChange(obj)
+	   	this.props.handleChange(obj)
   	},
 
 	render() {
