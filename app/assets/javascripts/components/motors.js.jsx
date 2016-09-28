@@ -56,39 +56,39 @@ var Motors = React.createClass({
 	},
 
 	postMotor() {
-    var that = this;
-    $.ajax({
-      method: 'POST',
-      data: {
-        motor: that.state.motor,
-      },
-      url: '/motors.json',
-      success: function(res) {
-        var newMotorList = that.state.motors;
-        newMotorList.push(res);
-        that.setState({
-          motors: newMotorList,
-          motor: {
-          	id: '',
-		        name: '',
-		        mass: '',
-						efficiency: '',
-						peak_power: '',
-						max_continuous_torque: '',
-						max_continuous_speed: '',
-						link: '',
-						cost: '',
-						notes: '',
-	      	},
-	      	showNewMotorForm: false,
-          errors: {},
-          edited: false
-        });
-      },
-      error: function(res) {
-        that.setState({errors: res.responseJSON.errors})
-      }
-    });
+	    var that = this;
+	    $.ajax({
+	      method: 'POST',
+	      data: {
+	        motor: that.state.motor,
+	      },
+	      url: '/motors.json',
+	      success: function(res) {
+	        var newMotorList = that.state.motors;
+	        newMotorList.push(res);
+	        that.setState({
+	          motors: newMotorList,
+	          motor: {
+	          	id: '',
+			        name: '',
+			        mass: '',
+							efficiency: '',
+							peak_power: '',
+							max_continuous_torque: '',
+							max_continuous_speed: '',
+							link: '',
+							cost: '',
+							notes: '',
+		      	},
+		      	showNewMotorForm: false,
+	          errors: {},
+	          edited: false
+	        });
+	      },
+	      error: function(res) {
+	        that.setState({errors: res.responseJSON.errors})
+	      }
+	    });
 	},
 
 	updateMotor() {
@@ -136,52 +136,52 @@ var Motors = React.createClass({
 	},
 
 	deleteMotor() {
-    var that = this;
-    var url = '/motors/'+this.state.selectedMotor.id+".json"
-    $.ajax({
-      method: 'DELETE',
-      data: {
-        motor: that.state.motor,
-      },
-      url: url,
-      success: function(res) {
-        that.setState({
-          motors: res,
-          motor: {
-          	id: '',
-		        name: '',
-		        mass: '',
-						efficiency: '',
-						peak_power: '',
-						max_continuous_torque: '',
-						max_continuous_speed: '',
-						link: '',
-						cost: '',
-						notes: '',
-	      	},
-	      	showEditMotorForm: false,
-	      	selectedMotor: {
-						name: 'Motors'
-					},
-          errors: {}
-        });
-      },
-      error: function(res) {
-        that.setState({errors: res.responseJSON.errors})
-      }
-    });
+	    var that = this;
+	    var url = '/motors/'+this.state.selectedMotor.id+".json"
+	    $.ajax({
+	      method: 'DELETE',
+	      data: {
+	        motor: that.state.motor,
+	      },
+	      url: url,
+	      success: function(res) {
+	        that.setState({
+	          motors: res,
+	          motor: {
+	          	id: '',
+			        name: '',
+			        mass: '',
+							efficiency: '',
+							peak_power: '',
+							max_continuous_torque: '',
+							max_continuous_speed: '',
+							link: '',
+							cost: '',
+							notes: '',
+		      	},
+		      	showEditMotorForm: false,
+		      	selectedMotor: {
+							name: 'Motors'
+						},
+	          errors: {}
+	        });
+	      },
+	      error: function(res) {
+	        that.setState({errors: res.responseJSON.errors})
+	      }
+	    });
 	},
 
-  isDisabled(){
-    return ((this.state.showEditMotorForm) ? 'disabled' : '');
-  },
+  	isDisabled(){
+	    return ((this.state.showEditMotorForm) ? 'disabled' : '');
+  	},
 
 	render() {
 		motors = this.state.motors ? this.state.motors.map(function(motor) {
-      return (
-        <li key={motor.id} onClick={() => this.selectMotor(motor)}><a>{motor.name}</a></li>
-      );
-    }, this) : 'null';
+	      	return (
+	        	<li key={motor.id} onClick={() => this.selectMotor(motor)}><a>{motor.name}</a></li>
+	      	);
+	    }, this) : 'null';
 
 		return (
 			<div>
