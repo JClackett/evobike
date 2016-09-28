@@ -45,18 +45,18 @@ var App = React.createClass({
 			battery: this.state.battery, 
 			motorSelected: this.state.motorSelected,
 			batterySelected: this.state.batterySelected,
-			gear_ratio: parseInt(this.state.gear_ratio),
-			no_batts: parseInt(this.state.no_batts),
-			cruise_speed: parseInt(this.state.cruise_speed),
-			radius_wheel: parseInt(this.state.radius_wheel),
-			dry_mass: parseInt(this.state.dry_mass)
+			gear_ratio: parseFloat(this.state.gear_ratio),
+			no_batts: parseFloat(this.state.no_batts),
+			cruise_speed: parseFloat(this.state.cruise_speed),
+			radius_wheel: parseFloat(this.state.radius_wheel),
+			dry_mass: parseFloat(this.state.dry_mass)
 		})
 
 		this.refs.results.calculateTopSpeed({
 			motor: this.state.motor, 
 			battery: this.state.battery, 
-			gear_ratio: parseInt(this.state.gear_ratio),
-			radius_wheel: parseInt(this.state.radius_wheel),
+			gear_ratio: parseFloat(this.state.gear_ratio),
+			radius_wheel: parseFloat(this.state.radius_wheel),
 			motorSelected: this.state.motorSelected,
 			batterySelected: this.state.batterySelected,
 		})

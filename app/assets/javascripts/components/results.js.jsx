@@ -22,8 +22,10 @@ var Results = React.createClass({
 		var max_continuous_speed = data.motor.max_continuous_speed
 		var gear_ratio = data.gear_ratio
 		var radius_wheel = data.radius_wheel
+		console.log(data.gear_ratio)
 		var max_rotation_of_wheel = max_continuous_speed/gear_ratio
-		var topSpeed = max_rotation_of_wheel*2*Math.PI*radius_wheel*60/63360
+		console.log(max_rotation_of_wheel)
+		var topSpeed = max_rotation_of_wheel*2*Math.PI*radius_wheel*(60/63360)
 		this.setState({
 			topSpeed: topSpeed.toFixed(2),
 			motorSelected: data.motorSelected,
@@ -34,7 +36,6 @@ var Results = React.createClass({
 
 	calculateDrivingRange(data) {
 		var total_mass = (data.dry_mass) + (data.motor.mass) + 18 + (data.battery.mass * data.no_batts) + 80
-		console.log(total_mass)
 		var cruise_speed_ms = (data.cruise_speed) * 0.44704
 		var hill_drag = gravity*total_mass*Math.sin((Math.PI / 180)*(hill_incline))
 		var roll_drag = roll_drag_coeff * total_mass * gravity * (Math.cos((Math.PI / 180)*(hill_incline)))
