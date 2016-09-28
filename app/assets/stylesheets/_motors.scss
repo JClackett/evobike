@@ -1,0 +1,66 @@
+// Place all the styles related to the Motors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+input {
+	text-align: center;
+}
+
+.bike {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	overflow: hidden;
+}
+
+.motors	{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+}
+
+.batteries	{
+	position: absolute;
+	top: 190px;
+	left: 40px;
+	text-align: left;
+}
+
+.bike-weight	{
+	position: absolute;
+	top: 175px;
+	right: 400px;	
+}
+
+.wheel-radius	{
+	position: absolute;
+	top: 350px;
+	left: 45px;	
+}
+
+.cruise-speed	{
+	position: absolute;
+	top: 360px;
+	right: 50px;
+	text-align: right;
+}
+
+.outputs	{
+	position: absolute;
+	bottom: 30px;
+	right: 50px;
+	text-align: right;
+}
+
+.gear-ratio {
+	position: absolute;
+	bottom: 30px;
+	left: 500px;
+}
+
+.no-batts {
+    position: absolute;
+    top: 140px;
+    left: 400px;
+}
