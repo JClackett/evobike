@@ -1,48 +1,45 @@
 class BikesController < ApplicationController
-  before_action :set_bike, only: [:show, :update, :destroy]
+	before_action :set_bike, only: [:show, :update, :destroy]
 
-  def index
-    	@batteries = Bike.all
-  end
+	def index
+		@bikes = Bike.all
+	end
 
-  def create
-    @bike = Bike.new(bike_params)
-  	respond_to do |format|
-			format.json do 
-      		if @bike.save
-        			render :json => @bike
-      		else
-        			render :json => { :errors => @bike.errors.messages }, :status => 422
-      		end
-    		end
-  	end
-  end
+	def create	
+		@bike = Bike.new(bike_params)
 
-  # PATCH/PUT /batteries/1
-  def update
-    if @bike.update_attributes(bike_params)
-      @batteries = Bike.all
-      render json: @batteries
-    else
-      render json: @batteries
-    end
-  end
+		if @bike.save
+			render json: @bike
+		else
+			render json: { error: ('bike_create_error') }, status: :unprocessable_entity
+		end
+	end
 
-  # DELETE /batteries/1
-  def destroy
-    @bike.destroy
-    @batteries = Bike.all
-    render json: @batteries
-  end
+	# PATCH/PUT /bikes/1
+	def update
+		if @bike.update(bike_params)
+			@bikes = Bike.all
+			render json: @bikes
+		else
+			render json: @bike.errors, status: :unprocessable_entity
+		end
+	end
 
-  private
+	# DELETE /bikes/1
+	def destroy
+		@bike.destroy
+		@bikes = Bike.all
+		render json: @bikes
+	end
 
-    def set_bike
-      @bike = Bike.find(params[:id])
-    end
+	private
 
-  	def bike_params
-  		params.require(:bike).permit(:id, :name, :dry_mass, :radius_wheel, :gear_ratio)
-  	end
+	def set_bike
+		@bike = Bike.find(params[:id])
+	end
+
+	def bike_params
+		params.require(:bike).permit(:id, :name, :dry_mass, :radius_wheel, :gear_ratio)
+	end
 		
 end
