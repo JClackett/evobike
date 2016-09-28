@@ -5,6 +5,10 @@ input {
 	text-align: center;
 }
 
+h4 {
+	text-align: center;
+}
+
 .bike {
 	width: 100%;
 	position: absolute;
@@ -29,19 +33,19 @@ input {
 
 .bike-weight	{
 	position: absolute;
-	top: 175px;
+	top: 155px;
 	right: 400px;	
 }
 
 .wheel-radius	{
 	position: absolute;
-	top: 350px;
+	top: 320px;
 	left: 45px;	
 }
 
 .cruise-speed	{
 	position: absolute;
-	top: 360px;
+	top: 340px;
 	right: 50px;
 	text-align: right;
 }
@@ -55,12 +59,12 @@ input {
 
 .gear-ratio {
 	position: absolute;
-	bottom: 30px;
+	bottom: 50px;
 	left: 500px;
 }
 
 .no-batts {
     position: absolute;
-    top: 140px;
+    top: 120px;
     left: 400px;
 }
