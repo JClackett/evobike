@@ -15,7 +15,7 @@ var Input = React.createClass({
 	render() {
 		return (
 			<div className="input-group">
-		  		<input type="text" className="form-control" placeholder={this.props.name} onChange={this.handleChange} id={this.props.id} />
+		  		<input type="text" className="form-control" placeholder={this.props.value} onChange={this.handleChange} id={this.props.id} />
 			</div>
 		);
   	}

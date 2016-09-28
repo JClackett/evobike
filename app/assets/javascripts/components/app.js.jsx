@@ -45,20 +45,20 @@ var App = React.createClass({
 			battery: this.state.battery, 
 			motorSelected: this.state.motorSelected,
 			batterySelected: this.state.batterySelected,
-			gear_ratio: this.state.gear_ratio,
-			no_batts: this.state.no_batts,
-			cruise_speed: this.state.cruise_speed,
-			radius_wheel: this.state.radius_wheel,
-			dry_mass: this.state.dry_mass
+			gear_ratio: parseInt(this.state.gear_ratio),
+			no_batts: parseInt(this.state.no_batts),
+			cruise_speed: parseInt(this.state.cruise_speed),
+			radius_wheel: parseInt(this.state.radius_wheel),
+			dry_mass: parseInt(this.state.dry_mass)
 		})
 
 		this.refs.results.calculateTopSpeed({
 			motor: this.state.motor, 
 			battery: this.state.battery, 
-			gear_ratio: this.state.gear_ratio,
-			radius_wheel: this.state.radius_wheel,
-			motorSelected: true,
-			batterySelected: true,
+			gear_ratio: parseInt(this.state.gear_ratio),
+			radius_wheel: parseInt(this.state.radius_wheel),
+			motorSelected: this.state.motorSelected,
+			batterySelected: this.state.batterySelected,
 		})
 	},
 
@@ -75,19 +75,19 @@ var App = React.createClass({
 				</div>
 
 				<div className="bike-weight">
-					<Input id="dry_mass" name="Bike weight exc. engine" handleChange={this.handleChange}/>
+					<Input id="dry_mass" name="Bike weight exc. engine" value={this.state.dry_mass} handleChange={this.handleChange}/>
 				</div>
 				<div className="wheel-radius">
-					<Input id="radius_wheel" name="Wheel radius (inches)" handleChange={this.handleChange}/>
+					<Input id="radius_wheel" name="Wheel radius (inches)" value={this.state.radius_wheel} handleChange={this.handleChange}/>
 				</div>
 				<div className="gear-ratio">
-					<Input id="gear_ratio" name="Gear ratio" handleChange={this.handleChange}/>
+					<Input id="gear_ratio" name="Gear ratio" value={this.state.gear_ratio} handleChange={this.handleChange}/>
 				</div>
 				<div className="no-batts">
-					<Input id="no_batts" name="Number of batteries" handleChange={this.handleChange}/>
+					<Input id="no_batts" name="Number of batteries" value={this.state.no_batts} handleChange={this.handleChange}/>
 				</div>
 				<div className="cruise-speed">
-					<Input id="cruise_speed" name="Crusing speed" handleChange={this.handleChange}/>
+					<Input id="cruise_speed" name="Crusing speed" value={this.state.cruise_speed} handleChange={this.handleChange}/>
 				</div>
 
 				<div className="outputs">
